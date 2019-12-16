@@ -1,0 +1,62 @@
+{
+  // Place your shop-admin-ui ワークスペース snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"scope": "javascript,typescript",
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  "console": {
+    "scope": "typescript,javascript",
+    "prefix": "console",
+    "body": "console.log('${1:val}:', ${1:value})",
+    "description": "コンソールログをいい感じにするやつ"
+  },
+  "template": {
+    "scope": "vue",
+    "prefix": "template",
+    "body": [
+      "<template>",
+      "\t<div />",
+      "</template>\n",
+      "<script lang=\"ts\">",
+      "import { Vue, Component } from 'nuxt-property-decorator'\n",
+      "@Component",
+      "export default class ${TM_FILENAME/(.+)(.vue+$)/$1/} extends Vue {\n\t$0\n}",
+      "</script>\n"
+    ],
+    "description": "nuxt-property-decoratorを使ったvueのテンプレート作成"
+  },
+  "template with prop": {
+    "scope": "vue",
+    "prefix": "template-prop",
+    "body": [
+      "<template>",
+      "\t<div />",
+      "</template>\n",
+      "<script lang=\"ts\">",
+      "import { Vue, Component, Prop } from 'nuxt-property-decorator'\n",
+      "@Component",
+      "export default class ${TM_FILENAME/(.+)(.vue+$)/$1/} extends Vue {",
+      "\t@Prop({ type: ${1:String}, default: ${2:''}, required: ${3:false} }) readonly ${4:hoge}!: ${5:string}",
+      "}",
+      "</script>\n"
+    ],
+    "description": "nuxt-property-decoratorを使ったvueのテンプレート作成(property付き)"
+  },
+  "props": {
+    "scope": "typescript",
+    "prefix": "prop",
+    "body": "@Prop({ type: ${1:String}, default: ${2:''}, required: ${3:true} }) readonly ${4:hoge}!: ${5:string}$0",
+    "description": "propertyのテンプレート"
+  }
+}
