@@ -1,0 +1,14 @@
+{
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "editor.formatOnSave": false,
+  "editor.snippetSuggestions": "top",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "vue"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
